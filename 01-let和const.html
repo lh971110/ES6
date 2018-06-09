@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			
+			
+			/*块级作用域  由大括号包围*/
+			/**/
+			 
+			function test() {
+//				let a = 1;
+//				for (let i = 1;i < 3 ; i++) {
+//					console.log(i);
+//				}
+//				console.log(i)  //脱离块级作用域
+
+//            let a = 1;
+//            let a =2;   //let不能重复声明
+			}
+			test();
+			
+			
+			/*const声明必须赋值
+			 声明基本数据类型不可以重新赋值
+			 声明引用类型可以赋值*/
+			function last(){
+				const PI = 3.1415926;
+				const k = {
+					a:1
+				}
+				k.b = 3
+				console.log(PI,k);
+			}
+			last();
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			/*解构赋值的分类
+						数组解构赋值  对象解构赋值 字符串解构赋值 布尔值解构赋值
+						函数参数解构赋值 数值解构赋值*/
+			{
+				let a, b, rest;
+				[a, b] = [1, 2];
+				console.log(a, b);
+			}
+			//数组解构赋值
+			{
+				let a, b, rest;
+				[a, b, ...rest] = [1, 2, 4, 5, 3, 2, 4, 5];
+				console.log(a, b, rest)
+			}
+			//对象解构赋值
+			{
+				let a, b;
+				({
+					a,
+					b
+				} = {
+					a: 1,
+					b: 2
+				})
+				console.log(a, b);
+			}
+
+			{
+				let a, b, c, rest;
+				[a, b, c = 3] = [1, 2];
+				console.log(a, b, c);
+			}
+
+			//变量的交换
+			{
+				let a = 1;
+				let b = 2;
+				[a, b] = [b, a];
+				console.log(a, b);
+			}
+
+			//接受返回值
+			{
+				function f() {
+					return [1, 2];
+				}
+				let a, b;
+				[a, b] = f();
+				console.log(a, b)
+			}
+
+			//选择性接受某几个变量
+			{
+				function f() {
+					return [1, 2, 3, 4, 5];
+				}
+				let a, b, c;
+				[a, , , b] = f();
+				console.log(a, b);
+			}
+
+			//不知道数组返回数组的长度  只关心第一个  其余赋值给数组
+			{
+				function f() {
+					return [1, 2, 3, 4, 5];
+				}
+				let a, b, c;
+				[a, , ...b] = f();
+				console.log(a, b);
+			}
+			
+			
+			{
+				let o ={p:42,q:true}
+				let {p,q} = o;
+				console.log(p,q);
+			}
+			
+			//后面的会覆盖前面的
+			{
+				let {a = 10,b = 5} = {a:3};
+				console.log(a,b);
+			}
+			
+			{
+				let metaDate = {
+					tittle: 'abc',
+					test:[{
+						tittle:'test',
+						dsdsf:'description'
+					}]
+				}
+				let {tittle:esTitle,test:[{tittle:cnTitle}]} = metaDate;
+				console.log(esTitle,cnTitle);
+			}
+		</script>
+	</body>
+
+</html>
