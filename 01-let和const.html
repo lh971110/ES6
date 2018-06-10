@@ -38,6 +38,34 @@
 				console.log(PI,k);
 			}
 			last();
+			
+			
+//			var arr = [];
+//			for (var i = 0; i < arr.length; i++) {
+//				arr[i] = function(){
+//					console.log(i)   //6
+//				}
+//			}
+//			arr[6]();
+			
+			
+			
+			
+			const arr = ['白班','妖姬','二条'];
+			arr.push('打通');
+		    console.log(arr);
+		    
+		    
+		    const arr1 = Object.freeze(['白班','妖姬','二条']);
+//			arr1.push('打通');
+//		    console.log(arr1);  //报错  因为已经被冻结了
+		    
+		    
+		    
+		    const arr3 = Object.freeze({'a':1,'b':2,'c':['i','j','k']})
+		    arr3.a = 44;
+		    arr3.c.push('a');   //可以push进去  因为冻结只冻结一层
+		    console.log(arr3)   //{'a':1,'b':2,'c':['i','j','k','a']};
 		</script>
 	</body>
 

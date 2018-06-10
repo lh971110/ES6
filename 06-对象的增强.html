@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*************/
+			let a = 100;
+			let obj = {
+				a,
+				b:200,
+				c:300
+			};
+			console.log(obj);  //100,200,300
+			
+			/*************/
+			var str = "name";
+			var obj1 = {
+				[str] : '小明',
+				age : 10,
+				sex : '男'
+			}
+			console.log(obj1.name);
+			
+			/*************/
+			let obj2 = {a:1};
+			let obj3 = {b:2};
+			let obj4 = {c:3};
+			Object.assign(obj2,obj3,obj4);
+			console.log(obj2);
+			
+			/*************/
+			
+			let obj5 = {'a':1,'b':2,'c':3};
+			let keys = Object.keys(obj5);
+			for (let k of keys) {
+				console.log(k);
+			}
+			for (let k in obj5) {
+				console.log(k);
+			}
+			
+			
+			/************/
+			let {x,y,...z} = {x:1,y:2,z:3,t:4};
+			console.log(x)
+			console.log(y)
+			console.log(z)
+			
+			
+			/************/
+			let obj6 = {
+				'a':1,
+				'b':2,
+				'c':3
+			};
+			obj6 = {
+				...,
+				'b' : 10
+			};
+			console.log(obj6);
+			
+		</script>
+	</body>
+</html>

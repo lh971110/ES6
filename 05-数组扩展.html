@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/****************/
+			console.log(isNaN('啊哈哈'));
+			console.log(Number.isNaN('海慧寺')); //自身是NAN才返回true
+			
+			/****************/
+			let obj = {
+				'0':'你是',
+				'1':'什么',
+				'2':'人',
+				length:3
+			}
+			let arr = Array.from(obj);
+			console.log(arr)
+			
+			/****************/
+			let arr1 = Array.of(1,2,3);
+			console.log(arr1);
+			
+			/****************/
+			let arr2 = [1,2,4,5,7,8,9,5,322,11,3,45,6,7,30,60];
+			let arr3 = arr2.find(function(value,index,arr){
+				if(value % 5 ==0 && value %6 == 0){
+					return true;
+				}
+			});
+			console.log(arr3);   //30
+			
+			
+			/****************/
+			let arr4 = ['李欢','美女','大长腿','白','眼睛大'];
+			for(let k of arr4.keys()){
+				console.log(k);   //0,1,2,3,4
+			}
+			
+			let arr5 = ['李欢','美女','大长腿','白','眼睛大'];
+			for(let [k,v] of arr5.entries()){
+				console.log(k,v);   
+			}
+			
+			/****************/
+			let arr6 = ['李欢','美女','大长腿','白','眼睛大'];
+			console.log(arr6.includes('李欢'));
+		</script>
+	</body>
+</html>
