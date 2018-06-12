@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box"></div>
+		<script type="text/javascript">
+			function loadPic(url){
+				return new Promise(function(resolve,reject){
+					var img = new Image;
+					img.onload = function(){
+						resolve(img);
+					}
+					img.onerror = function(){
+						reject(new Error('加载错误'));
+					}
+					img.src = url
+				})
+			}
+			loadPic('abc_terra1.png').then(function(img){
+				document.querySelector('.box').appendChild(img)
+			}),function(err){
+				alert('失败！');
+			}
+		</script>
+	</body>
+</html>

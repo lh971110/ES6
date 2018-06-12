@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//这是es6增加的一个处理异步的对象
+			var promise = new Promise(function(resolve,reject){
+				if(异步操作){
+					resolve(value);
+				}
+				reject(error);
+			});
+			promise.then(function(value){
+				//success
+			},function(error){
+				//failure
+			});
+			
+			
+			//举个例子
+			function timeout(ms,callback){
+				return new Promise(function(resolve,reject){
+					setTimeout(resolve,ms);
+				})
+			}
+			timeout(2000).then(function(){
+				console.log('你好');
+			}).then(function(){
+			    timeout(2000).then(function(){
+				   console.log('嗯嗯')
+			    });
+
+			});
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

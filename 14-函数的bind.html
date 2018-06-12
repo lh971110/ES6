@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let obj = {
+				a : 100
+			}
+			function fun(){
+				console.log(this.a);
+			}
+			var fun = fun.bind(obj);
+			let obj2 = {
+				a : 200,
+				fun : fun
+			}
+			obj2.fun();  //100  之前bind过  上下文没有变化  还是obj1
+			//bind（）不会运行函数，只能返回函数
+		</script>
+	</body>
+</html>

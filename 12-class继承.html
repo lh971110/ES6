@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			class People{
+				constructor(name,age,sex){
+					this.name = name;
+					this.age = age;
+					this.sex = sex;
+
+				}
+				sayHello(){
+					console.log(`你好,我是${this.name},今年${this.age}岁了`);
+				}
+				
+			}
+			class Student extends People{
+				constructor(name,age,sex,xuehao,banji){
+					super(name,age,sex);
+					this.xuehao = xuehao;
+					this.banji = banji;
+				}
+				xuexi(){
+					console.log(`我是${this.name},我正在学习,我是${this.xuehao}啊`)
+				}
+			}
+			var xiaoming = new Student('小明',13,'男',0+'5158203','光电1507');
+			xiaoming.xuexi();
+			xiaoming.sayHello();
+			console.log(xiaoming.__proto__.__proto__ ===People.prototype);
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var fs = require('fs');   //?
+			function getJson(url){
+				return new Promise(function(resolve,reject){
+					fs.readFile(url,function(err,data){
+						if(err){
+							reject(err);
+							return;
+						}
+						resolve(data.toString());
+					})
+				})
+			}
+			getJson('../test/01-.txt').then(function(data){
+				console.log(data);
+			})
+			
+			var arr = [01,02,03];
+			var promises = arr.map(function(item){
+				return getJson('../test' + item + 'txt');
+			})
+			Promise.all(promises).then(function(posts){
+				console.log('都加载完毕');
+				console.log(posts);
+			})
+		</script>
+	</body>
+</html>

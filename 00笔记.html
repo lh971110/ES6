@@ -12,7 +12,8 @@
 		
 		    3.const表示定义一个常量  不能更改常量的值  但是可以指向一个引用类型的值
 		                对这个引用类型的值的操作方法是允许的  但是不能允许指向别的值
-		               如果要冻结对象  用Object.freeze(); 但是只能冻结一层  
+		               如果要冻结对象  用Object.freeze(); 但是只能冻结一层 
+		    4.let和const定义声明的方法都不是定义在全局 
 		               
 		二.解构赋值
 		    1.数组解构用[],对象解构用{}
@@ -46,5 +47,29 @@
 		    4.Object.keys(obj5)方法得到obj5对象的所有键
 		    5.扩展运算符 
 		    6.拓展运算符
+		六.Promise对象
+		    1.可以调用then方法 
+		    2.catch 方法  表示捕获异常 
+		    3.Promise.all(数组)  表示数组中的Promise实例执行完毕之后做的事情，也可以调用then()
+		      then方法接受实参xxx，表示数组中所有的promise对象resolve的实参组成的数组
+		    4.Promise.resolve() 有时需要将现有对象转为 Promise 对象，Promise.resolve方法就起到这个作用。
+		        Promise.resolve('foo')
+                 // 等价于
+                new Promise(resolve => resolve('foo'))
+                     七.类的定义
+            1.class 底层还是prototype那套东西，也就是说构造还是存在，只不过写在class里面的constructor里面了
+              window还有一个People函数属性，People函数还是有prototype，我们写的属性方法都是在
+              prototype身上
+            2.class继承
+              ES6并没有深化'继承'	
+                     八.箭头函数
+            1.如果函数体中只有一条语句，此时不需要写大括号，不需要写return
+            2.注意：
+                1.函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象
+                2.不可以当做构造函数，也就是说，不可以使用new命令，否则会抛出一个错误
+                3.不可以使用arguments对象，该函数在函数体内不存在，如果要用，可以用Rest参数代替
+            3.function可以call/apply  箭头函数不可以call/apply;
+            4.箭头不可以使用bind()  function 可以使用bind() 但是其显示固定函数上下文
+                                     不管怎样调用函数  函数的上下文不会改变
 	</body>
 </html>

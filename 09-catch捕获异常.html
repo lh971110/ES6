@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function getInfo(){
+				return new Promise(function(resolve,reject){
+					setTimeout(resolve,2000);
+				})
+			}
+			getInfo().then(function(){
+				throw new Error('');
+			}).catch(err => {
+				console.log('捕获到了异常');
+			});
+		</script>
+	</body>
+</html>

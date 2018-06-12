@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let sum = (a,b) => {
+				return a + b;
+			}
+			console.log(sum(10,20));
+			
+			
+			//等价于
+//			let sum = function(a,b){
+//				return a + b;
+//			}
+//			sum(10,20);	
+			
+			
+			/***********/
+			let arr = [13,4,132,34,21,3243];
+			arr.forEach((item => {
+				if(item % 2 ==0){
+					console.log(item);
+				}
+			}))
+			
+			/***********/
+			let arr1 = [1,2,4,3,2];
+			let arr2 = (a,...b) =>{
+				console.log(b)
+			}
+			arr2(...arr1);
+			
+			
+			/***********/
+			var fun = () =>{
+				console.log(this);
+				console.log(this.a);
+			}
+			var obj = {
+				a : 100,
+				f : fun
+			}
+			obj.f();    //undefined
+			obj.f.call(obj);     //undefined
+			obj.f.apply(obj);     //undefined
+		    //也就是说 fun() 在运行的时候，里面的this永远不等于obj
+		    //而是永远等于window对象（在浏览器环境中）    或者是一个空对象（Nodejs环境中）；
+		    
+		    
+		    
+		   
+		</script>
+	</body>
+</html>

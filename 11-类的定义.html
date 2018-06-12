@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			class People{
+				constructor(name,age,sex){
+					this.name = name;
+					this.age = age;
+					this.sex = sex;
+
+				}
+				sayHello(){
+					console.log(`你好,我是${this.name},今年${this.age}岁了`);
+				}
+				zhangda(){
+					this.age++;
+				}
+			}
+			var xiaoming = new People('小明',12,'男');
+			xiaoming.zhangda();
+			xiaoming.zhangda();
+			xiaoming.zhangda();
+			xiaoming.sayHello();
+			console.log(xiaoming.hasOwnProperty('sayHello'));
+			console.log(xiaoming.__proto__ == People.prototype);
+			console.log(xiaoming.__proto__.hasOwnProperty('sayHello'));
+			
+		</script>
+	</body>
+</html>
